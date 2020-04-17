@@ -1,11 +1,92 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Seed Exchange</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Inconsolata" />
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="app.js"></script>
+    <title>Seed Exchange</title>
   </head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+  <!-- Links (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-row w3-padding w3-black">
+      <div class="w3-col s4">
+        <a href="#" class="w3-button w3-block w3-black">HOME</a>
+      </div>
+      <div class="w3-col s4">
+        <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
+      </div>
+      <div class="w3-col s4">
+        <a href="#collection" class="w3-button w3-block w3-black">THE SEEDS</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header with image -->
+  <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+    <div class="display-middle w3-center">
+      <span class="w3-text-white" style="font-size:80px">seed<br>exchange</span>
+    </div>
+  </header>
+
+  <!-- Add a background color and large text to the whole page -->
+  <div class="w3-sand w3-grayscale w3-large">
+
+  <!-- About Container -->
+  <div class="w3-container" id="about">
+    <div class="w3-content" style="max-width:700px">
+      <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT THE LIBRARY'S SEED EXCHANGE PROGRAM</span></h5>
+      <p>The seed exchange allows community members to check out seeds to plant in their home gardens. At the end of the growing season, save some seeds and return them to the library! in lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p>The data in the table comes from the google spreadsheet</p>
+      <a href="https://docs.google.com/spreadsheets/d/1T3QP7ed5CU1Tdu7cy1lDKGA2n8LLd11Bw4QvEB1aq_k/edit">Click to see the source sheet</a>
+    </div>
+  </div>
+
+  <!-- Collection Container -->
+  <div class="w3-container" id="collection">
+    <div class="w3-content w3-padding-48" style="max-width:700px">
+
+      <h5 class="w3-center w3-padding-24"><span class="w3-tag w3-wide">THE SEED COLLECTION</span></h5>
+
+      <div class="container text-center my-4">
+
+          <div class="tab" id="typeTabs">
+          </div>
+
+          <div id="varietyTables">
+          </div>
+
+          <script>
+          function switchType(evt, type) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+              tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("mdc-tab mdc-tab--active");
+            for (i = 0; i < tablinks.length; i++) {
+              tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(type).style.display = "block";
+            evt.currentTarget.className += " active";
+          }
+          </script>
+
+        </div>
+    </div>
+  </div>
+
+  </div>
+  <!-- End page content -->
+  <!-- Footer -->
+  <footer class="w3-center w3-light-grey w3-padding-24 w3-large">
+    <p>prototype seed library page for INSC 554</p>
+  </footer>
 </body>
 </html>
